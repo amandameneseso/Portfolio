@@ -1,0 +1,33 @@
+/* src/components/AppIcon.css */
+.app-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+  transition: transform 0.1s ease-in-out;
+}
+
+.app-icon-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.app-icon {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.app-label {
+  margin-top: 8px;
+  font-size: 0.85em;
+  /* color: #333; */
+  white-space: nowrap; /* Impede que o texto quebre linha */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+  max-width: 100%;
+}

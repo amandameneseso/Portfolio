@@ -1,0 +1,21 @@
+/* src/components/AboutDetailsWidget.css */
+.details-list {
+  list-style: none; /* Remove marcadores de lista padrão */
+  padding: 0;
+  margin: 0;
+}
+
+.details-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  /* color: #444; */
+  font-size: 0.95em;
+}
+
+.bullet-icon {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  line-height: 1.2;
+}

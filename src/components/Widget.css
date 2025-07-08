@@ -1,0 +1,28 @@
+/* src/components/Widget.css */
+.widget-card {
+  background: rgba(255, 255, 255, 0.7); /* Fundo translúcido */
+  backdrop-filter: blur(8px); /* Efeito de vidro */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 250px;
+  min-height: 120px; /* Altura mínima */
+  box-sizing: border-box;
+}
+
+.widget-title {
+  font-size: 1.1em;
+  color: #333;
+  margin: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separador */
+}
+
+.widget-content {
+  flex-grow: 1; /* Ocupa o espaço restante */
+  color: #555;
+  line-height: 1.6;
+}

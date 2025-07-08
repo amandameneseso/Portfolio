@@ -1,0 +1,113 @@
+/* src/pages/ProjectDetail.css */
+.project-detail-container {
+  padding: 30px;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff99;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Permite rolagem dentro do container */
+  height: 100%; /* Ocupa a altura disponível */
+  box-sizing: border-box; /* Inclui padding na altura */
+}
+
+.project-detail-title {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.project-detail-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-detail-description {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.project-tech-stack h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.project-tech-stack ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-tech-stack li {
+  background-color: #f0f4f8;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.project-links {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-link-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #007bff; /* Cor primária */
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.project-link-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.project-link-button.github {
+  background-color: #333; /* Cor para GitHub */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-link-button.github:hover {
+  background-color: #555;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .project-detail-container {
+    padding: 20px;
+    border-radius: 15px;
+  }
+  .project-detail-title {
+    font-size: 2em;
+  }
+  .project-detail-image {
+    max-height: 300px;
+  }
+  .project-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .project-link-button {
+    width: 100%;
+    text-align: center;
+  }
+}

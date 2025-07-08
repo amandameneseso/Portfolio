@@ -1,0 +1,91 @@
+/* src/pages/Home.css */
+.home-desktop {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto; /* Permite rolagem se o conteúdo exceder a tela */
+  height: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2.2em;
+  color: #222;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.widgets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas flexíveis, mínimo 280px */
+  gap: 20px;
+  align-items: start;
+  justify-items: center;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.app-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  max-width: fit-content;
+  /* justify-content: center; */
+  margin: 10px 45px;
+}
+
+#about-me-text {
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8em; /* Título menor para telas menores */
+    margin-bottom: 15px; /* Ajusta a margem inferior do título */
+  }
+
+  .home-desktop {
+    padding: 15px; /* Padding geral menor para o desktop */
+    gap: 15px; /* Reduz o espaçamento entre os elementos principais do desktop */
+  }
+
+  .widgets-grid {
+    grid-template-columns: 1fr; /* Força uma única coluna em telas pequenas */
+    gap: 15px; /* Reduz o espaçamento entre os widgets */
+    max-width: 100%; /* Garante que a grid ocupe a largura total */
+  }
+
+  .app-icons-container {
+    padding: 8px; /* Padding menor para o contêiner de ícones */
+    gap: 10px; /* Diminui o espaçamento entre os ícones */
+    /* Remova max-width: fit-content se você quiser que ele ocupe 100% da largura em mobile */
+    max-width: 100%; 
+  }
+
+  .quote-widget { 
+    grid-column: 1 / -1 !important; /* Força o widget a ocupar 1 coluna em mobile */
+    margin: 0px auto !important; /* Ajusta a margem para telas pequenas, removendo negativos */
+    max-width: 90% !important; /* Limita a largura em mobile para não tocar as bordas */
+  }
+}
+
+/* breakpoint intermediário para tablets em modo paisagem */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-desktop {
+    padding: 25px;
+  }
+  .widgets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  .app-icons-container {
+    gap: 20px;
+    padding: 15px;
+  }
+}

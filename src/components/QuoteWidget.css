@@ -1,0 +1,23 @@
+/* src/components/QuoteWidget.css */
+.quote-widget {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  grid-column: 3 / -1; /* Faz com que ocupe de 1 até a última coluna da grid */
+  max-width: 300px;
+  width: 100%;
+  margin: -160px auto;
+}
+
+.quote-text {
+  font-size: 1em;
+  font-style: italic;
+  /* color: #333; */
+}
+
+/* .quote-author {
+  font-size: 0.9em;
+  color: #666;
+  font-weight: 500;
+} */

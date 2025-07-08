@@ -1,0 +1,106 @@
+/* src/styles/App.css */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* Variáveis CSS para o Tema Claro */
+body.theme-light {
+  --color-app-background: linear-gradient(to right, #D7DDE8, #757F9A); /* Gradiente claro solicitado */
+
+  /* Cores para Widgets no Tema Claro */
+  --widget-bg: rgba(255, 255, 255, 0.7);
+  --widget-shadow: rgba(0, 0, 0, 0.1);
+  --widget-text-primary: #333;
+  --widget-text-secondary: #555;
+  --widget-title-color: #222;
+  --widget-accent-color: #007bff; /* Para ícones de bullet, etc. */
+}
+
+/* Variáveis CSS para o Tema Escuro */
+body.theme-dark {
+  --color-app-background: linear-gradient(to right, #3f4c6b, #606c88); /* Gradiente escuro solicitado */
+
+  /* Cores para Widgets no Tema Escuro */
+  --widget-bg: rgba(118, 127, 151, 0.658); /* Fundo escuro translúcido */
+  --widget-shadow: rgba(0, 0, 0, 0.3);
+  --widget-text-primary: #e0e0e0;
+  --widget-text-secondary: #a0a0a0;
+  --widget-title-color: #f0f0f0;
+  --widget-accent-color: #87cefa; /* Azul claro para ícones de bullet, etc. */
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-app-background);
+  transition: background 0.3s ease;
+}
+
+.ipad-layout {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  background: var(--color-app-background);
+  transition: background 0.3s ease;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.desktop-grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+  justify-items: center;
+}
+
+.widget-card {
+  background: var(--widget-bg);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.widget-title {
+  color: var(--widget-title-color);
+}
+
+.widget-content {
+  color: var(--widget-text-primary);
+}
+
+.tech-stack-item {
+  color: var(--widget-text-primary);
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+  .content-area {
+    padding: 10px;
+  }
+
+  body {
+    font-size: 0.9em;
+  }
+}

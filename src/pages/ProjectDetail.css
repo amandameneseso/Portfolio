@@ -1,46 +1,77 @@
 /* src/pages/ProjectDetail.css */
+
 .project-detail-container {
   padding: 30px;
-  color: #333;
-  max-width: 800px;
-  margin: 0 auto;
-  background: #ffffff99;
+  color: var(--widget-text-primary, #333);
+  background: var(--widget-bg, rgba(255, 255, 255, 0.6));
   border-radius: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Permite rolagem dentro do container */
-  height: 100%; /* Ocupa a altura disponível */
-  box-sizing: border-box; /* Inclui padding na altura */
+  box-shadow: 0 5px 15px var(--widget-shadow, rgba(0, 0, 0, 0.1));
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-detail-title {
-  font-size: 2em;
-  color: #222;
+  font-size: 2.5em;
+  color: var(--widget-title-color, #222);
   margin-bottom: 20px;
   text-align: center;
 }
 
+/* --- NOVO CONTÊINER FLEXBOX PARA DUAS COLUNAS --- */
+.project-content-two-columns {
+  display: flex; /* Habilita o Flexbox */
+  gap: 40px; /* Espaço entre a imagem e o texto */
+  align-items: flex-start; /* Alinha os itens ao topo */
+  flex-wrap: wrap; /* Permite quebrar para uma coluna em telas menores */
+  margin-top: 20px; /* Espaço do título */
+}
+
+/* --- ESTILOS DA IMAGEM --- */
 .project-detail-image {
-  width: 100%;
-  max-height: 400px;
+  /* max-width: 45%; */
+  height: auto;
   object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  margin: 0;
+  /* box-shadow: 0 8px 20px var(--widget-shadow, rgba(0, 0, 0, 0.15)); */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    /* box-shadow: 0 12px 25px var(--widget-shadow, rgba(0, 0, 0, 0.25)); */
+  }
+}
+
+/* --- ESTILOS DO CONTEÚDO DE TEXTO (LADO DIREITO) --- */
+.project-text-content {
+  flex: 1; /* Permite que ocupe o espaço restante */
+  min-width: 300px; /* Garante que o conteúdo de texto não fique muito espremido */
+  display: flex; /* Habilita flexbox para organizar elementos internos */
+  flex-direction: column; /* Organiza os filhos verticalmente */
+  gap: 15px; /* Espaçamento entre descrição, tecnologias e links */
 }
 
 .project-detail-description {
   font-size: 1.1em;
   line-height: 1.7;
-  margin-bottom: 25px;
   text-align: justify;
+  color: var(--widget-text-secondary, #555);
+  margin-bottom: 0; /* Reset de margem para o gap do flexbox */
 }
 
+.project-tech-stack {
+  margin-bottom: 0; /* Reset de margem */
+}
 .project-tech-stack h3 {
   font-size: 1.3em;
-  color: #333;
+  color: var(--widget-title-color, #333);
   margin-bottom: 15px;
 }
-
 .project-tech-stack ul {
   list-style: none;
   padding: 0;
@@ -48,66 +79,95 @@
   flex-wrap: wrap;
   gap: 10px;
 }
-
 .project-tech-stack li {
-  background-color: #f0f4f8;
+  background-color: var(--widget-bg, #f0f4f8);
   padding: 8px 15px;
   border-radius: 20px;
   font-size: 0.9em;
-  color: #555;
+  color: var(--widget-text-primary, #555);
+  border: 1px solid var(--widget-border, #dbe2ea);
 }
 
 .project-links {
-  margin-top: 30px;
+  margin-top: auto; /* <--- NOVO: Empurra os links para o final do container de texto */
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap; /* Garante que os botões quebrem linha se necessário */
 }
 
 .project-link-button {
   display: inline-block;
   padding: 12px 25px;
-  background-color: #007bff; /* Cor primária */
+  background-color: var(--widget-accent-color, #007bff);
   color: white;
   text-decoration: none;
   border-radius: 25px;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
-
 .project-link-button:hover {
-  background-color: #0056b3;
+  background-color: var(--widget-accent-color, #0056b3);
   transform: translateY(-2px);
 }
-
 .project-link-button.github {
-  background-color: #333; /* Cor para GitHub */
+  background-color: #333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .project-link-button.github:hover {
   background-color: #555;
 }
 
-/* Media queries para responsividade */
-@media (max-width: 768px) {
+/* --- RESPONSIVIDADE PARA TELAS MENORES --- */
+@media (max-width: 900px) { /* <--- Breakpoint ajustado para tablets/notebooks menores */
+  .project-content-two-columns {
+    flex-direction: column; /* Empilha a imagem e o texto verticalmente */
+    align-items: center; /* Centraliza os itens quando empilhados */
+    gap: 20px; /* Reduz o espaçamento quando empilhado */
+  }
+  .project-detail-image {
+    flex: none; /* Remove as regras de flexbox */
+    max-width: 80%; /* A imagem ocupa mais largura em telas menores */
+    width: auto; /* Deixa a largura automática */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+  }
+  .project-text-content {
+    flex: none; /* Remove as regras de flexbox */
+    width: 100%; /* O conteúdo de texto ocupa 100% da largura */
+    min-width: unset; /* Remove o min-width para mobile */
+    align-items: center; /* Centraliza os itens do texto */
+    text-align: center; /* Centraliza o texto em mobile */
+  }
+  .project-detail-description {
+    text-align: center; /* Centraliza a descrição */
+  }
+  .project-tech-stack ul {
+    justify-content: center; /* Centraliza as tecnologias quando empilhadas */
+  }
+}
+
+@media (max-width: 500px) { /* Breakpoint adicional para celulares */
   .project-detail-container {
-    padding: 20px;
-    border-radius: 15px;
+    padding: 15px;
   }
   .project-detail-title {
     font-size: 2em;
   }
   .project-detail-image {
-    max-height: 300px;
+    max-width: 90%; /* A imagem ocupa ainda mais largura em celulares */
+  }
+  .project-tech-stack h3 {
+    text-align: center;
+  }
+  .project-tech-stack ul {
+    gap: 8px;
   }
   .project-links {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
   .project-link-button {
     width: 100%;
-    text-align: center;
   }
 }

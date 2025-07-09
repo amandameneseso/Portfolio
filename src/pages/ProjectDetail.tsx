@@ -10,7 +10,7 @@ const projectsData = [
     name: 'Sobre mim',
     description: 'A beautiful and calming Pomodoro timer designed for focused work sessions. Features customizable intervals, ambient sounds, and a cozy aesthetic to enhance mindfulness during work.',
     technologies: ['React', 'TypeScript', 'CSS', 'Framer Motion'],
-    imageUrl: '/images/cozy-pomodoro-full.png', // Imagem maior do projeto
+    imageUrl: '/images/eu.png',
     liveUrl: 'https://cozy-pomodoro.vercel.app',
     githubUrl: 'https://github.com/seu-usuario/cozy-pomodoro',
   },
@@ -35,9 +35,8 @@ const projectsData = [
 ];
 
 const ProjectDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>(); // Obtém o ID do projeto da URL
+  const { id } = useParams<{ id: string }>();
 
-  // Encontra o projeto correspondente
   const project = projectsData.find(p => p.id === id);
 
   if (!project) {
@@ -52,29 +51,38 @@ const ProjectDetail: React.FC = () => {
   return (
     <div className="project-detail-container">
       <h1 className="project-detail-title">{project.name}</h1>
-      <img src={project.imageUrl} alt={project.name} className="project-detail-image" />
-      <p className="project-detail-description">{project.description}</p>
+      
+      {/* NOVO CONTÊINER FLEXBOX PARA O LAYOUT DE DUAS COLUNAS */}
+      <div className="project-content-two-columns">
+        {/* Imagem (esquerda) */}
+        <img src={project.imageUrl} alt={project.name} className="project-detail-image" />
+        
+        {/* Conteúdo de Texto (direita) */}
+        <div className="project-text-content">
+          <p className="project-detail-description">{project.description}</p>
 
-      <div className="project-tech-stack">
-        <h3>Tecnologias Usadas:</h3>
-        <ul>
-          {project.technologies.map((tech, index) => (
-            <li key={index}>{tech}</li>
-          ))}
-        </ul>
-      </div>
+          <div className="project-tech-stack">
+            <h3>Tecnologias Usadas:</h3>
+            <ul>
+              {project.technologies.map((tech, index) => (
+                <li key={index}>{tech}</li>
+              ))}
+            </ul>
+          </div>
 
-      <div className="project-links">
-        {project.liveUrl && (
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link-button">
-            Ver Projeto Online
-          </a>
-        )}
-        {project.githubUrl && (
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link-button github">
-            Ver Código no GitHub
-          </a>
-        )}
+          <div className="project-links">
+            {project.liveUrl && (
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link-button">
+                Ver Projeto Online
+              </a>
+            )}
+            {project.githubUrl && (
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link-button github">
+                Ver Código no GitHub
+              </a>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

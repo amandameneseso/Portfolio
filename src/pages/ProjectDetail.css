@@ -108,15 +108,52 @@
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
 .project-link-button:hover {
-  background-color: var(--widget-accent-color, #0056b3);
   transform: translateY(-2px);
+  color: white;
 }
-.project-link-button.github {
-  background-color: #333;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+.project-content-two-columns {
+  display: flex;
+  gap: 30px; /* Space between the two main columns */
+  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+  align-items: flex-start; /* Aligns content to the top of each column */
 }
-.project-link-button.github:hover {
-  background-color: #555;
+
+.project-images-column {
+  flex: 1; /* Allows this column to grow/shrink, taking up part of the space */
+  min-width: 300px; /* Ensures the image column doesn't get too narrow */
+  display: flex;
+  flex-direction: column; /* Stacks images vertically by default */
+  gap: 20px; /* Space between the images */
+  align-items: center; /* Centers images if they are narrower than the column */
+}
+
+.project-detail-image {
+  max-width: 80%; /* Ensures image fits within its container */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+}
+
+/* .project-detail-image.desktop {
+  max-width: 90%;
+} */
+
+.project-text-content {
+  flex: 1.5; /* Gives the text column more relative space than the image column */
+  min-width: 300px; /* Ensures the text column doesn't get too narrow */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .project-content-two-columns {
+    flex-direction: column; /* Stacks the columns vertically on small screens */
+  }
+
+  .project-images-column {
+    flex-direction: column; /* Ensures images are still stacked if column breaks */
+    align-items: center; /* Centers images when stacked on smaller screens */
+  }
 }
 
 /* --- RESPONSIVIDADE PARA TELAS MENORES --- */

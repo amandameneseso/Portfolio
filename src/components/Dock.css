@@ -32,16 +32,15 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #333;
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  color: #383838;
+  /* transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; */
   padding: 8px;
   border-radius: 12px;
 }
 
 .dock-link:hover,
 .dock-item a:hover {
-  transform: translateY(-5px); /* Efeito de "pular" */
-  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
 .dock-link.active {

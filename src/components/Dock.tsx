@@ -6,7 +6,7 @@ import './Dock.css';
 // Define o tipo para os itens do dock
 interface DockItem {
   id: string;
-  icon: string; // Pode ser um emoji, um caminho para uma imagem, ou um componente de ícone
+  icon: string; // Pode ser um emoji, um caminho para uma imagem, ou um componente de ícone (agora, uma string HTML para Font Awesome)
   label: string;
   path?: string; // Caminho interno (para NavLink)
   href?: string; // URL externa (para <a>)
@@ -31,7 +31,8 @@ const Dock: React.FC<DockProps> = ({ items }) => {
                 rel="noopener noreferrer"
                 title={item.label}
               >
-                <span className="dock-icon">{item.icon}</span>
+                {/* AQUI ESTÁ A MUDANÇA para o link externo: */}
+                <span className="dock-icon" dangerouslySetInnerHTML={{ __html: item.icon }} />
                 {/* <span className="dock-label">{item.label}</span> */}
               </a>
             ) : (
@@ -43,7 +44,8 @@ const Dock: React.FC<DockProps> = ({ items }) => {
                 }
                 title={item.label}
               >
-                <span className="dock-icon">{item.icon}</span>
+                {/* AQUI ESTÁ A MUDANÇA para o link interno: */}
+                <span className="dock-icon" dangerouslySetInnerHTML={{ __html: item.icon }} />
                 {/* <span className="dock-label">{item.label}</span> */}
               </NavLink>
             )}

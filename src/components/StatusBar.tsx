@@ -7,8 +7,8 @@ const StatusBar: React.FC = () => {
   const [currentDate, setCurrentDate] = useState<string>('');
 
   // Valores fixos, sem useState se não houver lógica para atualizá-los
-  const batteryPercentage = 85;
-  const wifiSignal = true;
+  // const batteryPercentage = 85;
+  // const wifiSignal = true;
 
   useEffect(() => {
     const updateDateTime = () => {
@@ -46,11 +46,9 @@ const StatusBar: React.FC = () => {
         {/* Adicione um título ou logo central aqui se desejar */}
       </div>
       <div className="status-bar-right">
-        {wifiSignal && <span className="icon wifi-icon"></span>} {/* Ícone de Wi-Fi */}
-        <span className="battery-icon">
-          {batteryPercentage}%
-          <div className="battery-level" style={{ width: `${batteryPercentage}%` }}></div>
-        </span>
+        <i className="fas fa-wifi icon wifi-icon icon"></i>
+        <i className="fa-solid fa-signal icon"></i>
+        <i className="fa-solid fa-battery-three-quarters icon icon"></i>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 /* src/pages/ProjectDetail.css */
-
 .project-detail-container {
-  padding: 30px;
+  padding: 35px;
   color: var(--widget-text-primary, #333);
   background: var(--widget-bg, rgba(255, 255, 255, 0.6));
   border-radius: 25px;
@@ -16,61 +15,59 @@
 }
 
 .project-detail-title {
-  font-size: 2.5em;
-  color: var(--widget-title-color, #222);
-  margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: 45px;
   text-align: center;
 }
 
-/* --- NOVO CONTÊINER FLEXBOX PARA DUAS COLUNAS --- */
 .project-content-two-columns {
-  display: flex; /* Habilita o Flexbox */
-  gap: 40px; /* Espaço entre a imagem e o texto */
-  align-items: flex-start; /* Alinha os itens ao topo */
-  flex-wrap: wrap; /* Permite quebrar para uma coluna em telas menores */
-  margin-top: 20px; /* Espaço do título */
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-/* --- ESTILOS DA IMAGEM --- */
 .project-detail-image {
-  /* max-width: 45%; */
+  max-width: 90%;
   height: auto;
   object-fit: cover;
-  border-radius: 18px;
   margin: 0;
-  /* box-shadow: 0 8px 20px var(--widget-shadow, rgba(0, 0, 0, 0.15)); */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   &:hover {
     transform: scale(1.02);
-    /* box-shadow: 0 12px 25px var(--widget-shadow, rgba(0, 0, 0, 0.25)); */
   }
 }
 
-/* --- ESTILOS DO CONTEÚDO DE TEXTO (LADO DIREITO) --- */
+.project-detail-image[src*="previa"] {
+max-width: 50%;
+}
+
 .project-text-content {
-  flex: 1; /* Permite que ocupe o espaço restante */
-  min-width: 300px; /* Garante que o conteúdo de texto não fique muito espremido */
-  display: flex; /* Habilita flexbox para organizar elementos internos */
-  flex-direction: column; /* Organiza os filhos verticalmente */
-  gap: 15px; /* Espaçamento entre descrição, tecnologias e links */
+  flex: 1.2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .project-detail-description {
-  font-size: 1.1em;
+  font-size: 1.04em;
   line-height: 1.7;
   text-align: justify;
-  color: var(--widget-text-secondary, #555);
-  margin-bottom: 0; /* Reset de margem para o gap do flexbox */
+  color: #444444;
+  margin-bottom: 0;
 }
 
 .project-tech-stack {
-  margin-bottom: 0; /* Reset de margem */
+  margin-bottom: 0;
 }
 .project-tech-stack h3 {
   font-size: 1.3em;
-  color: var(--widget-title-color, #333);
-  margin-bottom: 15px;
+  color: #333;
 }
 .project-tech-stack ul {
   list-style: none;
@@ -83,108 +80,83 @@
   background-color: var(--widget-bg, #f0f4f8);
   padding: 8px 15px;
   border-radius: 20px;
-  font-size: 0.9em;
+  font-size: 1em;
+  font-weight: 600;
   color: var(--widget-text-primary, #555);
-  border: 1px solid var(--widget-border, #dbe2ea);
 }
 
 .project-links {
-  margin-top: auto; /* <--- NOVO: Empurra os links para o final do container de texto */
+  /* margin-top: 5px; */
   display: flex;
   gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap; /* Garante que os botões quebrem linha se necessário */
+  /* justify-content: center; */
+  flex-wrap: wrap;
 }
 
 .project-link-button {
   display: inline-block;
   padding: 12px 25px;
-  background-color: var(--widget-accent-color, #007bff);
+  background-color: #4a7eb6;
   color: white;
   text-decoration: none;
   border-radius: 25px;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px #4a7eb657;
 }
 .project-link-button:hover {
   transform: translateY(-2px);
   color: white;
 }
 
-.project-content-two-columns {
-  display: flex;
-  gap: 30px; /* Space between the two main columns */
-  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
-  align-items: flex-start; /* Aligns content to the top of each column */
-}
-
 .project-images-column {
-  flex: 1; /* Allows this column to grow/shrink, taking up part of the space */
-  min-width: 300px; /* Ensures the image column doesn't get too narrow */
+  flex: 1;
+  min-width: 300px;
   display: flex;
-  flex-direction: column; /* Stacks images vertically by default */
-  gap: 20px; /* Space between the images */
-  align-items: center; /* Centers images if they are narrower than the column */
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
-.project-detail-image {
-  max-width: 80%; /* Ensures image fits within its container */
-  height: auto; /* Maintains aspect ratio */
-  border-radius: 8px; /* Optional: Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
-}
-
-/* .project-detail-image.desktop {
-  max-width: 90%;
-} */
-
-.project-text-content {
-  flex: 1.5; /* Gives the text column more relative space than the image column */
-  min-width: 300px; /* Ensures the text column doesn't get too narrow */
-}
-
-/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
   .project-content-two-columns {
-    flex-direction: column; /* Stacks the columns vertically on small screens */
+    flex-direction: column;
   }
 
   .project-images-column {
-    flex-direction: column; /* Ensures images are still stacked if column breaks */
-    align-items: center; /* Centers images when stacked on smaller screens */
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-/* --- RESPONSIVIDADE PARA TELAS MENORES --- */
-@media (max-width: 900px) { /* <--- Breakpoint ajustado para tablets/notebooks menores */
+@media (max-width: 900px) {
   .project-content-two-columns {
-    flex-direction: column; /* Empilha a imagem e o texto verticalmente */
-    align-items: center; /* Centraliza os itens quando empilhados */
-    gap: 20px; /* Reduz o espaçamento quando empilhado */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
   .project-detail-image {
-    flex: none; /* Remove as regras de flexbox */
-    max-width: 80%; /* A imagem ocupa mais largura em telas menores */
-    width: auto; /* Deixa a largura automática */
-    margin-bottom: 20px; /* Espaço abaixo da imagem */
+    flex: none;
+    max-width: 80%;
+    width: auto;
+    margin-bottom: 20px;
   }
   .project-text-content {
-    flex: none; /* Remove as regras de flexbox */
-    width: 100%; /* O conteúdo de texto ocupa 100% da largura */
-    min-width: unset; /* Remove o min-width para mobile */
-    align-items: center; /* Centraliza os itens do texto */
-    text-align: center; /* Centraliza o texto em mobile */
+    flex: none;
+    width: 100%;
+    min-width: unset;
+    align-items: center;
+    text-align: center;
   }
   .project-detail-description {
-    text-align: center; /* Centraliza a descrição */
+    text-align: center;
   }
   .project-tech-stack ul {
-    justify-content: center; /* Centraliza as tecnologias quando empilhadas */
+    justify-content: center;
   }
 }
 
-@media (max-width: 500px) { /* Breakpoint adicional para celulares */
+@media (max-width: 500px) {
   .project-detail-container {
     padding: 15px;
   }
@@ -192,7 +164,7 @@
     font-size: 2em;
   }
   .project-detail-image {
-    max-width: 90%; /* A imagem ocupa ainda mais largura em celulares */
+    max-width: 90%;
   }
   .project-tech-stack h3 {
     text-align: center;

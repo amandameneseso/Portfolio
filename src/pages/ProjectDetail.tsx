@@ -3,7 +3,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./ProjectDetail.css";
 import previa from '../assets/images/previa.png';
-import previaDesktop from '../assets/images/previa-desktop.png';
+import resumosads from '../assets/images/resumosads.png';
+import avocode from '../assets/images/avocode.png';
+import formulario1 from '../assets/images/formulario1.png';
+import formulario2 from '../assets/images/formulario2.png';
 
 const projectsData = [
   {
@@ -14,7 +17,6 @@ const projectsData = [
     <p>Este projeto demonstra experiência na criação de SPAs.</p>`,
     technologies: ["React", "TypeScript", "Vite", "CSS"],
     imageUrl: previa,
-    imageUrlDesktop: previaDesktop,
     liveUrl: "https://miminho.vercel.app/",
     githubUrl: "https://github.com/amandameneseso/Presente-react",
     offerPageUrl: "https://amandameneseso.github.io/Miminho/",
@@ -37,20 +39,39 @@ const projectsData = [
       "CSS",
       "FullCalendar",
     ],
-    imageUrl: "/images/ecommerce-shop-full.png",
+    imageUrl: resumosads,
     liveUrl: "https://resumos-ads.vercel.app/",
     githubUrl: "https://github.com/amandameneseso/Resumos-ADS",
   },
   {
     id: "avocode",
     name: "Avocode",
-    description:
-      "A collection of my academic and professional resumes, showcasing my skills and accomplishments. Includes a modern and visually appealing design.",
-    technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
-    imageUrl: "/images/resumos-full.png",
-    liveUrl: "https://resumos.vercel.app",
-    githubUrl: "https://github.com/seu-usuario/resumos",
+    description:`<p>Sou a criadora do Avocode, um projeto focado no ensino de programação e tem como propósito orientar pessoas que estão iniciando no mundo da tecnologia a aprender programação. Criei esse projeto quando iniciei os estudos em tecnologia para servir como repositório dos resumos, atividades e desafios que fiz enquanto estudava de forma autodidata.</p>`,
+    technologies: ["HTML", "CSS"],
+    imageUrl: avocode,
+    liveUrl: "https://amandameneseso.github.io/Avocode/",
+    githubUrl: "https://github.com/amandameneseso/Avocode",
   },
+  {
+    id: "cadastroComAutomacao",
+    name: "Automação com Python",
+    description:`<p>Criei um sistema de cadastro de produtos que contém uma página de login, uma página de cadastro de produtos e uma automação em Python que preenche os dados direto no sistema a partir de um arquivo .csv que funciona como banco de dados. Esse projeto integra três partes distintas para otimizar o processo de cadastro de produtos:</p>
+    <ul>
+      <li>Interface Web: Criei uma interface visual intuitiva com uma página de login e um formulário para o cadastro de novos produtos. Além disso, quando adicionados, os produtos cadastrados são exibidos em uma tabela.</li>
+      <li>Automação com Python (PyAutoGUI): Desenvolvi um script que automatiza o preenchimento dos dados, simulando as ações de um usuário.</li>
+      <li>Processamento de dados: O script utiliza a biblioteca Pandas para ler dados de uma base de dados em formato .csv, tornando o processo de importação de informações eficiente e flexível.</li>
+    </ul>
+    <p>Criei também uma interface em Python para facilitar o uso, que permite ao usuário selecionar o arquivo .csv contendo os dados dos produtos. Esse projeto foi uma ótima forma de aplicar conhecimentos em automação, Python, JavaScript, HTML, CSS e integração entre tecnologias.</p>`,
+    technologies: ["HTML", "CSS", "JavaScript", "Python", "PyAutoGUI", "Pandas"],
+    imageUrl: formulario1,
+    imageUrlDesktop: formulario2,
+    liveUrl: "https://amandameneseso.github.io/Sistema-de-cadastro-de-produtos/",
+    githubUrl: [
+      { url: "https://github.com/amandameneseso/Sistema-de-cadastro-de-produtos", label: "Repositório da Interface Web" },
+      { url: "https://github.com/amandameneseso/Automacao-para-o-Sistema-de-cadastro-de-produtos", label: "Repositório da automação" }
+    ],
+    videoUrl: "https://www.youtube.com/watch?v=SEU_VIDEO_ID_AQUI",
+  }
 ];
 
 const ProjectDetail: React.FC = () => {
@@ -115,15 +136,31 @@ const ProjectDetail: React.FC = () => {
                 <i className="fas fa-external-link-alt link-icon"></i> Ver projeto
               </a>
             )}
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link-button github"
-              >
-                <i className="fab fa-github link-icon"></i> Repositório no GitHub
-              </a>
+            {/* verificar se githubUrl é um array ou uma string */}
+            {Array.isArray(project.githubUrl) ? (
+              project.githubUrl.map((repo, index) => (
+                <a
+                  key={index}
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link-button github"
+                >
+                  <i className="fab fa-github link-icon"></i> {repo.label}
+                </a>
+              ))
+            ) : (
+              // Se githubUrl não for um array
+              project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link-button github"
+                >
+                  <i className="fab fa-github link-icon"></i> Repositório no GitHub
+                </a>
+              )
             )}
             {project.offerPageUrl && (
               <a
@@ -143,6 +180,16 @@ const ProjectDetail: React.FC = () => {
                 className="project-link-button aggregator"
               >
                 <i className="fas fa-list-alt link-icon"></i> Agregador de links
+              </a>
+            )}
+            {project.videoUrl && (
+              <a
+                href={project.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link-button youtube"
+              >
+                <i className="fab fa-youtube link-icon"></i> Vídeo de demonstração
               </a>
             )}
           </div>

@@ -38,20 +38,26 @@ function App() {
     {
       id: "miminho",
       icon: '<i class="fa-solid fa-gift"></i>',
-      label: "Pomodoro",
+      label: "Miminho",
       path: "/projects/miminho",
     },
     {
       id: "resumos-ads",
       icon: '<i class="fa-solid fa-book"></i>',
-      label: "E-commerce",
+      label: "Resumos ADS",
       path: "/projects/resumos-ads",
     },
     {
       id: "avocode",
       icon: '<i class="fas fa-file-alt"></i>',
-      label: "Resumos",
+      label: "Avocode",
       path: "/projects/avocode",
+    },
+    {
+      id: "cadastroComAutomacao",
+      icon: '<i class="fa-brands fa-python"></i>',
+      label: "Automação com Python",
+      path: "/projects/cadastroComAutomacao",
     },
   ];
 

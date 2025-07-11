@@ -36,6 +36,11 @@ const technologiesData = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
   },
   {
+    name: "Python",
+    iconSrc:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+  },
+  {
     name: "Bootstrap",
     iconSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
@@ -51,6 +56,7 @@ const aboutMeDetails = [
   "Estudo graduação em Análise e Desenvolvimento de Sistemas,",
   "Gosto de criar sites para qualquer necessidade que tenho,",
   "Sempre em busca de novos desafios e aprendendo.",
+  "Você pode conferir meus principais projetos nas seções abaixo.",
 ];
 
 function Home() {

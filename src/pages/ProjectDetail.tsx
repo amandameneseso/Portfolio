@@ -92,10 +92,8 @@ const ProjectDetail: React.FC = () => {
     <div className="project-detail-container">
       <h1 className="project-detail-title">{project.name}</h1>
 
-      {/* CONTÊINER FLEXBOX PARA O LAYOUT DE DUAS COLUNAS */}
       <div className="project-content-two-columns">
-        {/* NOVO CONTÊINER PARA AS IMAGENS (COLUNA ESQUERDA) */}
-        <div className="project-images-column"> {/* Adicionei uma nova div para as imagens */}
+        <div className="project-images-column">
           <img
             src={project.imageUrl}
             alt={`${project.name} - Imagem Principal`}
@@ -105,12 +103,11 @@ const ProjectDetail: React.FC = () => {
             <img
               src={project.imageUrlDesktop}
               alt={`${project.name} - Imagem Desktop`}
-              className="project-detail-image desktop" // Adicionei uma classe para estilização específica
+              className="project-detail-image desktop"
             />
           )}
         </div>
 
-        {/* Conteúdo de Texto (coluna direita) */}
         <div className="project-text-content">
           <div
             className="project-detail-description"

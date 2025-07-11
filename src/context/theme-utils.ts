@@ -1,8 +1,5 @@
-// src/context/theme-utils.ts
-
 import { createContext, useContext } from 'react';
 
-// Define os tipos para o contexto do tema
 export interface ThemeContextType {
   theme: 'light' | 'dark';
   toggleTheme: () => void;

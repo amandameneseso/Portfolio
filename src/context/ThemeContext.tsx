@@ -1,13 +1,8 @@
-// src/context/ThemeContext.tsx
-// Este arquivo agora exporta APENAS o componente ThemeProvider
-
 import React, { useState } from 'react';
 import type { ReactNode } from 'react';
 
-// --- CAMINHOS ATUALIZADOS AQUI ---
-import { ThemeContext } from './theme-utils'; // <-- AGORA IMPORTA DE theme-utils
-import type { ThemeContextType } from './theme-utils'; // <-- AGORA IMPORTA DE theme-utils
-// --- FIM DOS CAMINHOS ATUALIZADOS ---
+import { ThemeContext } from './theme-utils';
+import type { ThemeContextType } from './theme-utils';
 
 interface ThemeProviderProps {
   children: ReactNode;

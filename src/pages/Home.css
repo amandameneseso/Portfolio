@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  overflow-y: auto; /* Permite rolagem se o conteúdo exceder a tela */
+  overflow-y: auto;
   height: 100%;
   box-sizing: border-box;
   align-items: center;
@@ -20,7 +20,7 @@
 
 .widgets-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas flexíveis, mínimo 280px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   align-items: start;
   justify-items: center;
@@ -36,7 +36,6 @@
   backdrop-filter: blur(5px);
   border-radius: 15px;
   max-width: fit-content;
-  /* justify-content: center; */
   margin: 10px 45px;
 }
 
@@ -46,36 +45,34 @@
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 1.8em; /* Título menor para telas menores */
-    margin-bottom: 15px; /* Ajusta a margem inferior do título */
+    font-size: 1.8em;
+    margin-bottom: 15px;
   }
 
   .home-desktop {
-    padding: 15px; /* Padding geral menor para o desktop */
-    gap: 15px; /* Reduz o espaçamento entre os elementos principais do desktop */
+    padding: 15px;
+    gap: 15px;
   }
 
   .widgets-grid {
-    grid-template-columns: 1fr; /* Força uma única coluna em telas pequenas */
-    gap: 15px; /* Reduz o espaçamento entre os widgets */
-    max-width: 100%; /* Garante que a grid ocupe a largura total */
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 100%;
   }
 
   .app-icons-container {
-    padding: 8px; /* Padding menor para o contêiner de ícones */
-    gap: 10px; /* Diminui o espaçamento entre os ícones */
-    /* Remova max-width: fit-content se você quiser que ele ocupe 100% da largura em mobile */
-    max-width: 100%; 
+    padding: 8px;
+    gap: 10px;
+    max-width: 100%;
   }
 
-  .quote-widget { 
-    grid-column: 1 / -1 !important; /* Força o widget a ocupar 1 coluna em mobile */
-    margin: 0px auto !important; /* Ajusta a margem para telas pequenas, removendo negativos */
-    max-width: 90% !important; /* Limita a largura em mobile para não tocar as bordas */
+  .quote-widget {
+    grid-column: 1 / -1 !important;
+    margin: 0px auto !important;
+    max-width: 90% !important;
   }
 }
 
-/* breakpoint intermediário para tablets em modo paisagem */
 @media (min-width: 769px) and (max-width: 1024px) {
   .home-desktop {
     padding: 25px;

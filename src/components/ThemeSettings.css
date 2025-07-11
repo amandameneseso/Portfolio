@@ -10,7 +10,7 @@
 }
 
 .modal-content {
-  background: #ffffffef; /* Levemente translúcido */
+  background: #ffffffef;
   padding: 32px;
   border-radius: 24px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.05);
@@ -76,7 +76,6 @@
   color: var(--color-primary-accent);
 }
 
-/* Animação para entrada suave */
 @keyframes fadeIn {
   from {
     transform: scale(0.95);
@@ -88,7 +87,6 @@
   }
 }
 
-/* Responsivo */
 @media (max-width: 500px) {
   .modal-content {
     padding: 24px;

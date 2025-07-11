@@ -3,10 +3,10 @@ import React from 'react';
 import './AppIcon.css';
 
 interface AppIconProps {
-  iconSrc: string; // Caminho para a imagem do ícone
+  iconSrc: string;
   label: string;
-  onClick?: () => void; // Para ações internas
-  href?: string; // Para links externos
+  onClick?: () => void;
+  href?: string;
 }
 
 const AppIcon: React.FC<AppIconProps> = ({ iconSrc, label, onClick, href }) => {

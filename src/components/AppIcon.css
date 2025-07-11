@@ -25,9 +25,8 @@
 .app-label {
   margin-top: 8px;
   font-size: 0.85em;
-  /* color: #333; */
-  white-space: nowrap; /* Impede que o texto quebre linha */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+  text-overflow: ellipsis;
   max-width: 100%;
 }

@@ -1,11 +1,11 @@
 // src/components/TechStackWidget.tsx
 import React from 'react';
-import Widget from './Widget'; // Importa o componente base Widget
+import Widget from './Widget';
 import './TechStackWidget.css';
 
 interface Technology {
   name: string;
-  iconSrc: string; // Caminho para o ícone da tecnologia
+  iconSrc: string;
 }
 
 interface TechStackWidgetProps {

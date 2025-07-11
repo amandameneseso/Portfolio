@@ -2,20 +2,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useEffect } from "react";
 
-// --- CAMINHOS ATUALIZADOS AQUI ---
 import { ThemeProvider } from "./context/ThemeContext";
-import { useTheme } from "./context/theme-utils"; // <-- AGORA IMPORTA DE theme-utils
-// --- FIM DOS CAMINHOS ATUALIZADOS ---
+import { useTheme } from "./context/theme-utils";
 
-// Importa os componentes de UI (StatusBar e Dock)
 import StatusBar from "./components/StatusBar";
 import Dock from "./components/Dock";
-
-// Importa as páginas/views da sua aplicação
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
-
-// Importa os estilos globais
 import "./styles/App.css";
 
 // Componente interno para aplicar a classe do tema ao body

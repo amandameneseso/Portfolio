@@ -4,11 +4,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.5); /* Fundo translúcido */
+  background: rgba(255, 255, 255, 0.5);
   font-size: 0.9em;
   color: #333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil */
-  z-index: 100; /* Garante que fique no topo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 100;
   position: sticky; /* Fica fixo no topo */
   top: 0;
   left: 0;
@@ -28,4 +28,3 @@
 
 /* .status-bar-center { 
 } */
-/* Pode ser usado para um título central ou um logo */

@@ -6,9 +6,6 @@ import "./Home.css";
 import { useState } from "react";
 import ThemeSettings from "../components/ThemeSettings";
 
-// Importe sua imagem aqui se estiver em src/assets/
-// import myPhoto from '../assets/images/minha-foto.jpg';
-
 const technologiesData = [
   {
     name: "HTML",
@@ -70,8 +67,7 @@ function Home() {
         <AboutDetailsWidget
           title="Sobre mim"
           detailsPoints={aboutMeDetails}
-          // imageSrc={myPhoto} // Se a imagem estiver importada de src/assets/
-          imageSrc="/images/eu2.png" // Se a imagem estiver na pasta public/images/
+          imageSrc="/images/eu2.png"
         >
           <p id="about-me-text">Oi! Eu sou Amanda. Eu...</p>
         </AboutDetailsWidget>

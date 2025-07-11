@@ -1,7 +1,7 @@
 /* src/components/Widget.css */
 .widget-card {
-  background: rgba(255, 255, 255, 0.7); /* Fundo translúcido */
-  backdrop-filter: blur(8px); /* Efeito de vidro */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.1);
@@ -9,7 +9,7 @@
   flex-direction: column;
   gap: 15px;
   min-width: 250px;
-  min-height: 120px; /* Altura mínima */
+  min-height: 120px;
   box-sizing: border-box;
 }
 
@@ -18,7 +18,7 @@
   color: #333;
   margin: 0;
   padding-bottom: 5px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separador */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .widget-content {

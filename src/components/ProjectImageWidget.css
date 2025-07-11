@@ -1,13 +1,13 @@
 /* src/components/ProjectImageWidget.css */
 .project-image-widget {
-  padding: 0; /* Remove padding do widget base para a imagem preencher */
+  padding: 0;
   overflow: hidden; /* Garante que a imagem não saia das bordas */
 }
 
 .project-preview-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Garante que a imagem cubra o espaço */
-  border-radius: 20px; /* Herda do widget card */
-  display: block; /* Remove espaço extra abaixo da imagem */
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
 }

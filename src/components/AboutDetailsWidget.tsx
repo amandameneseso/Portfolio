@@ -7,7 +7,7 @@ import React from 'react';
    title: string;
    children?: ReactNode;
    detailsPoints?: string[];
-   imageSrc?: string; // Nova prop para a URL da imagem
+   imageSrc?: string;
  }
 
  const AboutDetailsWidget: React.FC<AboutDetailsWidgetProps> = ({ title, children, detailsPoints, imageSrc }) => {

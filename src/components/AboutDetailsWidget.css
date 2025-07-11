@@ -1,6 +1,6 @@
 /* src/components/AboutDetailsWidget.css */
 .details-list {
-  list-style: none; /* Remove marcadores de lista padrão */
+  list-style: none;
   padding: 0;
   margin: 0;
 }

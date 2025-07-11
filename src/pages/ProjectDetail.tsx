@@ -70,7 +70,7 @@ const projectsData = [
       { url: "https://github.com/amandameneseso/Sistema-de-cadastro-de-produtos", label: "Repositório da Interface Web" },
       { url: "https://github.com/amandameneseso/Automacao-para-o-Sistema-de-cadastro-de-produtos", label: "Repositório da automação" }
     ],
-    videoUrl: "https://www.youtube.com/watch?v=SEU_VIDEO_ID_AQUI",
+    videoUrl: "https://www.youtube.com/watch?v=XizJoxPfFkU",
   }
 ];
 

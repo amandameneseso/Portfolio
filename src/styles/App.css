@@ -1,5 +1,3 @@
-/* src/styles/App.css */
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -9,30 +7,29 @@ body {
   overflow: hidden;
 }
 
-/* Variáveis CSS para o Tema Claro */
 body.theme-light {
-  --color-app-background: linear-gradient(to right, #D7DDE8, #757F9A); /* Gradiente claro solicitado */
+  --color-app-background: linear-gradient(to right, #D7DDE8, #757F9A);
 
-  /* Cores para Widgets no Tema Claro */
   --widget-bg: rgba(255, 255, 255, 0.7);
   --widget-shadow: rgba(0, 0, 0, 0.1);
   --widget-text-primary: #333;
   --widget-text-secondary: #555;
   --widget-title-color: #222;
-  --widget-accent-color: #007bff; /* Para ícones de bullet, etc. */
+  --widget-accent-color: #007bff;
 }
 
-/* Variáveis CSS para o Tema Escuro */
 body.theme-dark {
-  --color-app-background: linear-gradient(to right, #3f4c6b, #606c88); /* Gradiente escuro solicitado */
+  --color-app-background: linear-gradient(to right, #3f4c6b, #606c88);
 
-  /* Cores para Widgets no Tema Escuro */
-  --widget-bg: rgba(118, 127, 151, 0.658); /* Fundo escuro translúcido */
+  --widget-bg: rgba(118, 127, 151, 0.658);
   --widget-shadow: rgba(0, 0, 0, 0.3);
-  --widget-text-primary: #e0e0e0;
-  --widget-text-secondary: #a0a0a0;
+  --widget-text-primary: #ffffff;
+  --widget-text-secondary: #f7f7f7;
   --widget-title-color: #f0f0f0;
-  --widget-accent-color: #87cefa; /* Azul claro para ícones de bullet, etc. */
+  --widget-accent-color: #87cefa;
+  --tech-bg: #ced4d8;
+  --link-bg: #a7b9cc;
+  --textlink: #3b3f41;
 }
 
 #root {

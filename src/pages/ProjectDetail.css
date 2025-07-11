@@ -121,8 +121,8 @@ max-width: 50%;
 
 @media (max-width: 900px) {
   .project-detail-container {
-    width: 95%; /* Ocupa mais largura em telas menores */
-    padding: 20px; /* Reduz padding */
+    width: 95%;
+    padding: 20px;
   }
 
   .project-content-two-columns {
@@ -145,61 +145,60 @@ max-width: 50%;
   }
 
   .project-detail-image {
-    max-width: 80%; /* Reduz o tamanho máximo das imagens */
-    margin: 0 auto; /* Centraliza as imagens */
+    max-width: 80%;
+    margin: 0 auto;
   }
 
-  /* Aplica a redução da imagem 'previa' mesmo em telas menores, mas com base no novo max-width da coluna */
   .project-detail-image[src*="previa"] {
-    max-width: 40%; /* Ainda menor para a 'previa' em mobile */
+    max-width: 40%;
   }
-
 
   .project-text-content {
     flex: none; /* Não permite que a coluna de texto cresça */
-    width: 100%; /* Ocupa a largura total disponível */
+    width: 100%;
     min-width: unset; /* Remove min-width fixo */
-    align-items: center; /* Centraliza o texto */
-    text-align: center; /* Centraliza o texto */
+    align-items: center;
+    text-align: center;
     gap: 15px; /* Reduz o espaçamento entre elementos de texto */
   }
 
   .project-detail-description {
-    text-align: center; /* Centraliza a descrição */
-    font-size: 1em; /* Ajusta tamanho da fonte */
+    /* text-align: center; */
+    font-size: 1em;
   }
 
   .project-tech-stack ul {
-    justify-content: center; /* Centraliza as tags de tecnologia */
-    gap: 8px; /* Espaçamento menor entre as tags */
+    justify-content: center; 
+    gap: 8px;
   }
 
   .project-links {
-    flex-direction: column; /* Empilha os botões verticalmente */
-    gap: 10px; /* Espaçamento menor entre os botões */
-    width: 100%; /* Ocupa a largura total para os botões empilhados */
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
   }
 
   .project-link-button {
-    width: 100%; /* Botões ocupam a largura total do contêiner */
-    padding: 10px 20px; /* Reduz padding dos botões */
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
   }
 }
 
-/* Pequenos ajustes para telas muito pequenas (smartphones menores) */
 @media (max-width: 500px) {
   .project-detail-container {
-    padding: 15px; /* Padding ainda menor */
+    padding: 15px;
   }
   .project-detail-title {
-    font-size: 1.6em; /* Título ainda menor */
+    font-size: 1.6em;
     margin-bottom: 20px;
   }
   .project-detail-image {
-    max-width: 90%; /* Ajusta max-width para imagens em telas muito pequenas */
+    max-width: 90%;
   }
   .project-detail-image[src*="previa"] {
-    max-width: 50%; /* Mantém o ajuste para 'previa' */
+    max-width: 50%;
   }
   .project-tech-stack h3 {
     text-align: center;
@@ -209,26 +208,26 @@ max-width: 50%;
 /* breakpoint intermediário para tablets em modo paisagem (entre 769px e 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .project-detail-container {
-    width: 85%; /* Um pouco mais estreito que desktop, mas mais largo que mobile */
+    width: 85%;
     padding: 30px;
   }
   .project-content-two-columns {
     gap: 30px;
   }
   .project-images-column {
-    min-width: 200px; /* Permite que a coluna de imagem seja um pouco menor */
+    min-width: 200px;
   }
   .project-detail-image {
-    max-width: 95%; /* Ajusta o tamanho da imagem para caber melhor */
+    max-width: 95%;
   }
   .project-detail-image[src*="previa"] {
-    max-width: 50%; /* Mantém a proporção para 'previa' */
+    max-width: 50%;
   }
   .project-text-content {
-    min-width: 280px; /* Ajusta min-width para a coluna de texto */
+    min-width: 280px;
   }
   .project-links {
-    gap: 15px; /* Reduz o espaçamento entre os botões */
-    justify-content: flex-start; /* Alinha os botões à esquerda */
+    gap: 15px;
+    justify-content: flex-start;
   }
 }

@@ -47,6 +47,10 @@
 max-width: 50%;
 }
 
+.project-detail-image[src*="embreve"] {
+max-width: 30%;
+}
+
 .project-text-content {
   flex: 1.2;
   min-width: 300px;

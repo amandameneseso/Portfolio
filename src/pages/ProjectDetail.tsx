@@ -7,6 +7,7 @@ import resumosads from '../assets/images/resumosads.png';
 import avocode from '../assets/images/avocode.png';
 import formulario1 from '../assets/images/formulario1.png';
 import formulario2 from '../assets/images/formulario2.png';
+import embreve from '../assets/images/embreve.jpg';
 
 const projectsData = [
   {
@@ -71,6 +72,17 @@ const projectsData = [
       { url: "https://github.com/amandameneseso/Automacao-para-o-Sistema-de-cadastro-de-produtos", label: "Repositório da automação" }
     ],
     videoUrl: "https://www.youtube.com/watch?v=XizJoxPfFkU",
+  },
+  {
+    id: "lojaDeRoupas",
+    name: "Loja de roupas",
+    description:`<p>Estou desenvolvendo um site de loja Full Stack usando React JS, MongoDB, Express JS e Node JS.</p>
+    <p>Na loja, o usuário poderá explorar produtos, arquivá-los e comprá-los, além de adicioná-los ao carrinho e selecionar variantes do produto, como tamanho. O usuário também pode encomendar o produto informando o endereço de entrega e usando qualquer método de pagamento. Adicionarei dois gateways de pagamento online: Stripe e Razorpay para que o cliente possa pagar online e fazer o pedido.</p>
+    <p>Também construirei um painel de administração para que o administrador possa carregar um produto, excluí-lo ou verificar todos os produtos adicionados à loja. Construirei este projeto de backend usando Node.js e Express, e todos os dados de produtos, usuários e pedidos serão armazenados no banco de dados MongoDB.</p>`,
+    technologies: ["React", "MongoDB", "Express JS", "Node JS", "Stripe", "Razorpay"],
+    imageUrl: embreve,
+    // liveUrl: "https://amandameneseso.github.io/Loja-de-roupas/",
+    githubUrl: "https://github.com/amandameneseso/Loja-de-roupas",
   }
 ];
 

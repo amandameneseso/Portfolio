@@ -52,6 +52,12 @@ function App() {
       label: "Automação com Python",
       path: "/projects/cadastroComAutomacao",
     },
+    {
+      id: "lojaDeRoupas",
+      icon: '<i class="fa-solid fa-cart-shopping"></i>',
+      label: "Loja de roupas",
+      path: "/projects/lojaDeRoupas",
+    },
   ];
 
   return (

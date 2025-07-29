@@ -7,7 +7,6 @@ import resumosads from '../assets/images/resumosads.png';
 import avocode from '../assets/images/avocode.png';
 import formulario1 from '../assets/images/formulario1.png';
 import formulario2 from '../assets/images/formulario2.png';
-import embreve from '../assets/images/embreve.jpg';
 import lojaDeRoupas from '../assets/images/loja-de-roupas.png';
 
 const projectsData = [
@@ -76,7 +75,7 @@ const projectsData = [
   },
   {
     id: "lojaDeRoupas",
-    name: "Loja de roupas",
+    name: "Loja de Roupas",
     description:`<p>Estou desenvolvendo um site de loja Full Stack usando React JS, MongoDB, Express JS e Node JS.</p>
     <p>Na loja, o usuário poderá explorar produtos, arquivá-los e comprá-los, além de adicioná-los ao carrinho e selecionar variantes do produto, como tamanho. O usuário também pode encomendar o produto informando o endereço de entrega e usando qualquer método de pagamento. Adicionarei o gateway de pagamento online Stripe para que o cliente possa pagar online e fazer o pedido.</p>
     <p>Também construirei um painel de administração para que o administrador possa carregar um produto, excluí-lo ou verificar todos os produtos adicionados à loja. Construirei este projeto de backend usando Node.js e Express, e todos os dados de produtos, usuários e pedidos serão armazenados no banco de dados MongoDB.</p>`,

@@ -76,9 +76,9 @@ const projectsData = [
   {
     id: "lojaDeRoupas",
     name: "Loja de Roupas",
-    description:`<p>Estou desenvolvendo um site de loja Full Stack usando React JS, MongoDB, Express JS e Node JS.</p>
-    <p>Na loja, o usuário poderá explorar produtos, arquivá-los e comprá-los, além de adicioná-los ao carrinho e selecionar variantes do produto, como tamanho. O usuário também pode encomendar o produto informando o endereço de entrega e usando qualquer método de pagamento. Adicionarei o gateway de pagamento online Stripe para que o cliente possa pagar online e fazer o pedido.</p>
-    <p>Também construirei um painel de administração para que o administrador possa carregar um produto, excluí-lo ou verificar todos os produtos adicionados à loja. Construirei este projeto de backend usando Node.js e Express, e todos os dados de produtos, usuários e pedidos serão armazenados no banco de dados MongoDB.</p>`,
+    description:`<p>Desenvolvi um site de loja Full Stack usando React JS, MongoDB, Express JS e Node JS.</p>
+    <p>Na loja, o usuário pode explorar produtos, arquivá-los e comprá-los, além de adicioná-los ao carrinho e selecionar variantes do produto, como tamanho. O usuário também pode encomendar o produto informando o endereço de entrega e usando qualquer método de pagamento. Adicionei o gateway de pagamento online Stripe para que o cliente possa pagar online e fazer o pedido.</p>
+    <p>Também construí um painel de administração para que o administrador possa adicionar produtos, excluí-los ou verificar todos os produtos adicionados à loja. Construí o backend usando Node.js e Express, e todos os dados de produtos, usuários e pedidos são armazenados no banco de dados MongoDB.</p>`,
     technologies: ["React", "Tailwind CSS", "MongoDB", "Express JS", "Node JS", "Stripe"],
     imageUrl: lojaDeRoupas,
     liveUrl: "https://loja-frontend-seven.vercel.app/",

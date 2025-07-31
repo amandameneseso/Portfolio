@@ -1,14 +1,16 @@
-// src/pages/ProjectDetail.tsx
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ProjectDetail.css";
+
 import previa from '../assets/images/previa.png';
 import resumosads from '../assets/images/resumosads.png';
 import avocode from '../assets/images/avocode.png';
 import formulario1 from '../assets/images/formulario1.png';
 import formulario2 from '../assets/images/formulario2.png';
 import lojaDeRoupas from '../assets/images/loja-de-roupas.png';
+import lojaDeRoupasAdm from '../assets/images/loja-de-roupas-adm.png';
 
+// Dados dos projetos
 const projectsData = [
   {
     id: "miminho",
@@ -67,11 +69,11 @@ const projectsData = [
     imageUrl: formulario1,
     imageUrlDesktop: formulario2,
     liveUrl: "https://amandameneseso.github.io/Sistema-de-cadastro-de-produtos/",
-    githubUrl: [
+    githubUrl: [ // Array de URLs do GitHub
       { url: "https://github.com/amandameneseso/Sistema-de-cadastro-de-produtos", label: "Repositório da Interface Web" },
       { url: "https://github.com/amandameneseso/Automacao-para-o-Sistema-de-cadastro-de-produtos", label: "Repositório da automação" }
     ],
-    videoUrl: "https://www.youtube.com/watch?v=XizJoxPfFkU",
+    videoUrl: "https://youtu.be/XizJoxPfFkU?si=BDZG-UCe2MfJK3az",
   },
   {
     id: "lojaDeRoupas",
@@ -81,6 +83,7 @@ const projectsData = [
     <p>Também construí um painel de administração para que o administrador possa adicionar produtos, excluí-los ou verificar todos os produtos adicionados à loja. Construí o backend usando Node.js e Express, e todos os dados de produtos, usuários e pedidos são armazenados no banco de dados MongoDB.</p>`,
     technologies: ["React", "Tailwind CSS", "MongoDB", "Express JS", "Node JS", "Stripe"],
     imageUrl: lojaDeRoupas,
+    imageUrlDesktop: lojaDeRoupasAdm,
     liveUrl: "https://loja-frontend-gamma.vercel.app/",
     githubUrl: "https://github.com/amandameneseso/Loja-de-roupas",
   }
@@ -89,7 +92,23 @@ const projectsData = [
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
+  // Estados para controlar o modal da imagem
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState("");
+
   const project = projectsData.find((p) => p.id === id);
+
+  // Função para abrir o modal de imagem
+  const openImageModal = (imageUrl: string) => {
+    setModalImage(imageUrl);
+    setIsModalOpen(true);
+  };
+
+  // Função para fechar o modal de imagem
+  const closeImageModal = () => {
+    setIsModalOpen(false);
+    setModalImage("");
+  };
 
   if (!project) {
     return (
@@ -110,12 +129,16 @@ const ProjectDetail: React.FC = () => {
             src={project.imageUrl}
             alt={`${project.name} - Imagem Principal`}
             className="project-detail-image"
+            onClick={() => openImageModal(project.imageUrl)} // Adicionado onClick para abrir o modal da imagem
+            style={{ cursor: 'pointer' }}
           />
-          {project.imageUrlDesktop && ( // Condicionalmente renderiza a segunda imagem
+          {project.imageUrlDesktop && ( // Renderiza condicionalmente a segunda imagem
             <img
               src={project.imageUrlDesktop}
               alt={`${project.name} - Imagem Desktop`}
               className="project-detail-image desktop"
+              onClick={() => openImageModal(project.imageUrlDesktop)}
+              style={{ cursor: 'pointer' }}
             />
           )}
         </div>
@@ -145,7 +168,7 @@ const ProjectDetail: React.FC = () => {
                 <i className="fas fa-external-link-alt link-icon"></i> Ver projeto
               </a>
             )}
-            {/* verificar se githubUrl é um array ou uma string */}
+            {/* Verifica se githubUrl é um array ou uma string e renderiza os links apropriados */}
             {Array.isArray(project.githubUrl) ? (
               project.githubUrl.map((repo, index) => (
                 <a
@@ -204,6 +227,16 @@ const ProjectDetail: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal de Imagem */}
+      {isModalOpen && (
+        <div className="image-modal-overlay" onClick={closeImageModal}>
+          <div className="image-modal-content" onClick={e => e.stopPropagation()}>
+            <span className="close-button" onClick={closeImageModal}>&times;</span>
+            <img src={modalImage} alt="Imagem Ampliada" className="modal-image" />
+          </div>
+        </div>
+      )}      
     </div>
   );
 };

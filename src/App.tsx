@@ -29,6 +29,12 @@ function App() {
       path: "/",
     },
     {
+      id: "lojaDeRoupas",
+      icon: '<i class="fa-solid fa-cart-shopping"></i>',
+      label: "Loja de roupas",
+      path: "/projects/lojaDeRoupas",
+    },
+    {
       id: "miminho",
       icon: '<i class="fa-solid fa-gift"></i>',
       label: "Miminho",
@@ -51,12 +57,6 @@ function App() {
       icon: '<i class="fa-brands fa-python"></i>',
       label: "Automação com Python",
       path: "/projects/cadastroComAutomacao",
-    },
-    {
-      id: "lojaDeRoupas",
-      icon: '<i class="fa-solid fa-cart-shopping"></i>',
-      label: "Loja de roupas",
-      path: "/projects/lojaDeRoupas",
     },
   ];
 

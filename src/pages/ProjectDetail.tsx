@@ -81,7 +81,7 @@ const projectsData = [
     <p>Também construí um painel de administração para que o administrador possa adicionar produtos, excluí-los ou verificar todos os produtos adicionados à loja. Construí o backend usando Node.js e Express, e todos os dados de produtos, usuários e pedidos são armazenados no banco de dados MongoDB.</p>`,
     technologies: ["React", "Tailwind CSS", "MongoDB", "Express JS", "Node JS", "Stripe"],
     imageUrl: lojaDeRoupas,
-    liveUrl: "https://loja-frontend-seven.vercel.app/",
+    liveUrl: "https://loja-frontend-gamma.vercel.app/",
     githubUrl: "https://github.com/amandameneseso/Loja-de-roupas",
   }
 ];

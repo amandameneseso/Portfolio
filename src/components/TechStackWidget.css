@@ -13,6 +13,11 @@
   text-align: center;
   /* color: #555; */
   font-size: 0.85em;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tech-item:hover {
+  transform: scale(1.07);
 }
 
 .tech-icon-img {

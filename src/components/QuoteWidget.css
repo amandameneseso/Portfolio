@@ -7,7 +7,7 @@
   grid-column: 3 / -1; /* Faz com que ocupe de 1 até a última coluna da grid */
   max-width: 300px;
   width: 100%;
-  margin: -290px auto;
+  margin: -340px auto;
 }
 
 .quote-text {
@@ -21,3 +21,10 @@
   color: #666;
   font-weight: 500;
 } */
+
+@media (max-width: 1300px) {
+  .quote-widget {
+    margin: -270px auto;
+    padding: 10px 15px;
+  }
+}

@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #383838;
+  color: var(--item-dock-bg, #383838);
   padding: 8px;
   border-radius: 12px;
 }
@@ -53,6 +53,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.dock-item:hover .dock-icon {
+  transform: scale(1.07);
 }
 
 .dock-label {
@@ -68,12 +73,29 @@
   transform: translateY(0);
 }
 
-.dock-icon {
-  transition: transform 0.2s ease-in-out;
-}
+@media (max-width: 1280px) {
+  .dock {
+    padding: 6px 12px;
+    gap: 12px;
+    border-radius: 16px;
+  }
 
-.dock-item:hover .dock-icon {
-  transform: scale(1.1);
+  .dock-link,
+  .dock-item a {
+    padding: 6px;
+    border-radius: 10px;
+    font-size: 0.95em;
+  }
+
+  .dock-icon {
+    font-size: 1.9em;
+    width: 36px;
+    height: 36px;
+  }
+
+  .dock-label {
+    font-size: 0.65em;
+  }
 }
 
 @media (max-width: 500px) {
@@ -124,3 +146,4 @@
     text-align: center;
   }
 }
+

@@ -91,6 +91,11 @@ max-width: 30%;
   color: var(--textlink, #4d4d4d);
 }
 
+.project-tech-stack li:hover {
+  background-color: var(--tech-bg-hover, #cacfd7);
+  color: var(--textlink, #222);
+}
+
 .project-links {
   /* margin-top: 5px; */
   display: flex;
@@ -183,22 +188,22 @@ max-width: 30%;
   }
 
   .project-content-two-columns {
-    flex-direction: column; /* Empilha as colunas verticalmente */
-    align-items: center; /* Centraliza o conteúdo quando empilhado */
-    gap: 30px; /* Ajusta o espaçamento entre as seções empilhadas */
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
   }
 
   .project-detail-title {
-    font-size: 1.8em; /* Título menor para telas menores */
+    font-size: 1.8em;
     margin-bottom: 30px;
   }
 
   .project-images-column {
     flex: none; /* Não permite que a coluna de imagens cresça, mas a largura é controlada por max-width */
-    width: 100%; /* Ocupa a largura total disponível */
-    min-width: unset; /* Remove min-width fixo */
-    flex-direction: column; /* Mantém as imagens empilhadas */
-    gap: 15px; /* Espaçamento menor entre as imagens */
+    width: 100%;
+    min-width: unset;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .project-detail-image {
@@ -213,15 +218,16 @@ max-width: 30%;
   .project-text-content {
     flex: none; /* Não permite que a coluna de texto cresça */
     width: 100%;
-    min-width: unset; /* Remove min-width fixo */
+    min-width: unset;
     align-items: center;
     text-align: center;
-    gap: 15px; /* Reduz o espaçamento entre elementos de texto */
+    gap: 15px;
   }
 
   .project-detail-description {
     /* text-align: center; */
     font-size: 1em;
+    padding: 0 15px;
   }
 
   .project-tech-stack ul {
@@ -233,6 +239,7 @@ max-width: 30%;
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    margin-bottom: 20px;
   }
 
   .project-link-button {
@@ -240,7 +247,7 @@ max-width: 30%;
     display: block;
     margin: 0 auto;
     padding: 10px 20px;
-  }
+    }
 }
 
 @media (max-width: 500px) {
@@ -286,5 +293,31 @@ max-width: 30%;
   .project-links {
     gap: 15px;
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 1280px) {
+  .modal-image {
+    max-width: 900px;
+    max-height: 500px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .modal-image {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-modal-content {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 15px;
+  }
+
+  .modal-image {
+    max-width: 100%;
+    width: auto;
   }
 }

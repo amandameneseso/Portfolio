@@ -31,6 +31,7 @@ body.theme-dark {
   --tech-bg: #ced4d8;
   --link-bg: #a7b9cc;
   --textlink: #3b3f41;
+  --item-dock-bg: #d9e2eb;
 }
 
 #root {

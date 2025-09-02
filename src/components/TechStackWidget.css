@@ -30,4 +30,5 @@
 .tech-name {
   word-break: break-word; /* Permite quebrar palavras longas */
   white-space: normal; /* Permite que o texto quebre linha */
+  font-weight: 600;
 }

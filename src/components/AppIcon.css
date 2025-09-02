@@ -29,4 +29,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+  color: var(--widget-text-primary);
+  font-weight: 600;
 }

@@ -9,7 +9,7 @@ body {
 }
 
 body.theme-light {
-  --color-app-background: linear-gradient(to right, #D7DDE8, #757F9A);
+  --color-app-background: linear-gradient(to right, #d3e9f0, #90b6c4);
 
   --widget-bg: rgba(255, 255, 255, 0.7);
   --widget-shadow: rgba(0, 0, 0, 0.1);

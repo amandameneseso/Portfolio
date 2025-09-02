@@ -19,9 +19,6 @@ const ThemeSettings: React.FC<ThemeSettingsProps> = ({ isOpen, onClose }) => {
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2>Configurações</h2>
-          <button className="close-button" onClick={onClose}>
-            x
-          </button>
         </div>
 
         <div className="theme-options">

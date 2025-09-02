@@ -1,5 +1,5 @@
 // src/components/Dock.tsx
-import React from 'react';
+import React, { useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Dock.css';
 
@@ -18,6 +18,12 @@ interface DockProps {
 }
 
 const Dock: React.FC<DockProps> = ({ items }) => {
+  const playClickSound = useCallback(() => {
+    const audio = new Audio("/sounds/pop-cartoon.mp3");
+    audio.volume = 0.4; // volume mais baixo para não incomodar
+    audio.play().catch(() => {});
+  }, []);
+
   return (
     <div className="dock-container">
       <div className="dock">
@@ -29,6 +35,7 @@ const Dock: React.FC<DockProps> = ({ items }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={item.label}
+                onClick={playClickSound}
               >
                 <span className="dock-icon" dangerouslySetInnerHTML={{ __html: item.icon }} />
               </a>
@@ -40,6 +47,7 @@ const Dock: React.FC<DockProps> = ({ items }) => {
                   `dock-link ${isActive ? 'active' : ''}`
                 }
                 title={item.label}
+                onClick={playClickSound}
               >
                 <span className="dock-icon" dangerouslySetInnerHTML={{ __html: item.icon }} />
               </NavLink>

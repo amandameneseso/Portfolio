@@ -20,7 +20,6 @@ const Notifications = [
 
 const quotes = [
   "O homem que move uma montanha começa carregando pequenas pedras.",
-  "Código é como humor. Quando você tem que explicar, ele é ruim.",
   "Simplicidade é a alma da eficiência.",
   "O sucesso é a soma de pequenos esforços repetidos dia após dia.",
   "Se você não pode fazer grandes coisas, faça pequenas coisas de uma maneira excelente."

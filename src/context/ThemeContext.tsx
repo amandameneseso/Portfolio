@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import type { ReactNode } from 'react';
-
 import { ThemeContext } from './theme-utils';
 import type { ThemeContextType } from './theme-utils';
 

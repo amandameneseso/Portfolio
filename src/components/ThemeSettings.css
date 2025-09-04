@@ -59,7 +59,7 @@
   color: var(--color-text-primary);
   cursor: pointer;
   transition: all 0.25s ease;
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
 }
 

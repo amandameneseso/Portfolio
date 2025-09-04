@@ -2,6 +2,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useEffect } from "react";
 
+import { NotificationProvider } from "./context/NotificationContext";
+
 import { ThemeProvider } from "./context/ThemeContext";
 import { useTheme } from "./context/theme-utils";
 
@@ -61,21 +63,23 @@ function App() {
   ];
 
   return (
-    <ThemeProvider>
-      <ThemeApplier />
-      <Router>
-        <div className="ipad-layout">
-          <StatusBar />
-          <div className="content-area">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects/:id" element={<ProjectDetail />} />
-            </Routes>
+    <NotificationProvider>
+      <ThemeProvider>
+        <ThemeApplier />
+        <Router>
+          <div className="ipad-layout">
+            <StatusBar />
+            <div className="content-area">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects/:id" element={<ProjectDetail />} />
+              </Routes>
+            </div>
+            <Dock items={dockItems} />
           </div>
-          <Dock items={dockItems} />
-        </div>
-      </Router>
-    </ThemeProvider>
+        </Router>
+      </ThemeProvider>
+    </NotificationProvider>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/theme-utils';
+import { useNotifications } from '../context/NotificationContext';
 import './ThemeSettings.css';
 
 interface ThemeSettingsProps {
@@ -9,6 +10,7 @@ interface ThemeSettingsProps {
 
 const ThemeSettings: React.FC<ThemeSettingsProps> = ({ isOpen, onClose }) => {
   const { theme, setTheme } = useTheme();
+  const { areNotificationsEnabled, toggleNotifications } = useNotifications();
 
   if (!isOpen) {
     return null;
@@ -39,6 +41,15 @@ const ThemeSettings: React.FC<ThemeSettingsProps> = ({ isOpen, onClose }) => {
             }}
           >
             Tema escuro
+          </button>
+          <button
+            className={`theme-button ${areNotificationsEnabled ? 'active' : ''}`}
+            onClick={() => {
+              toggleNotifications();
+              onClose();
+            }}
+          >
+            {areNotificationsEnabled ? 'Desativar notificações' : 'Ativar notificações'}
           </button>
         </div>
       </div>

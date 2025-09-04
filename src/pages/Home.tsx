@@ -6,6 +6,7 @@ import "./Home.css";
 import { useState, useEffect } from "react";
 import ThemeSettings from "../components/ThemeSettings";
 import Notification from "../components/Notification";
+import { useNotifications } from "../context/NotificationContext";
 import type { ReactNode } from "react";
 
 const Notifications = [
@@ -98,30 +99,40 @@ function Home() {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [notifications, setNotifications] = useState<ReactNode[]>([]);
   const [notificationIndex, setNotificationIndex] = useState(0);
+  const { areNotificationsEnabled } = useNotifications();
 
+  // Combinei a lógica de notificações em um único useEffect
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (notificationIndex < Notifications.length) {
-        const message = Notifications[notificationIndex];
-        setNotifications((prev) => [...prev, message]);
-        setNotificationIndex(prev => prev + 1);
-      } else {
-        clearInterval(interval);
-      }
-    }, 30000); // a cada 30 segundos aparece uma notificação
+    let interval: number;
+    if (areNotificationsEnabled) {
+      interval = setInterval(() => {
+        if (notificationIndex < Notifications.length) {
+          const message = Notifications[notificationIndex];
+          setNotifications((prev) => [...prev, message]);
+          setNotificationIndex(prev => prev + 1);
+        } else {
+          clearInterval(interval);
+        }
+      }, 30000); // a cada 30 segundos aparece uma notificação
+    }
 
-    return () => clearInterval(interval);
-  }, [notificationIndex]); // Inclua as dependências
+    return () => {
+      // Garante que o intervalo é limpo, mesmo se areNotificationsEnabled mudar
+      if (interval) clearInterval(interval);
+    };
+  }, [areNotificationsEnabled, notificationIndex]);
+
+  // Combinei as lógicas da função em uma única função
+  const handleQuoteClick = () => {
+    if (areNotificationsEnabled) {
+      const audio = new Audio("/sounds/turn-page.mp3");
+      audio.play();
+    }
+    setQuoteIndex((prev) => (prev + 1) % quotes.length);
+  };
 
   const handleCloseNotification = (index: number) => {
     setNotifications((prev) => prev.filter((_, i) => i !== index));
-  };
-
-  const handleQuoteClick = () => {
-    const audio = new Audio("/sounds/turn-page.mp3");
-    audio.play();
-
-    setQuoteIndex((prev) => (prev + 1) % quotes.length);
   };
 
   return (
@@ -166,7 +177,7 @@ function Home() {
           onClick={handleQuoteClick} // passa a função de clique
         />
 
-        {notifications.map((msg, i) => (
+        {areNotificationsEnabled && notifications.map((msg, i) => (
         <Notification
           key={i}
           message={msg}

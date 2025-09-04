@@ -28,7 +28,7 @@ const Notifications = [
   <>Notícia: "<b>Novo app revolucionário:</b> <i>Envia notificações para lembrar você de ignorar notificações.</i>"</>,
   <>Notícia: "<b>Conflito Internacional:</b> <i>Programadores usuários de Windows e Linux declaram trégua para debater a melhor forma de centralizar uma div.</i>"</>,
   <>Notícia: "Escada impede fuga de robô rolante."</>,
-  <>Notícia: "<b>Descoberta energia barata e limpa:</b> <i>Empresa de tecnologia afirma ter desenvolvido usina que funciona totalmente a base de gargalhadas de crianças. Nega relatos da existência de monstros por perto.</i>"</>,
+  <>Notícia: "<b>Descoberta energia barata e limpa:</b> <i>Empresa de tecnologia afirma ter desenvolvido nova fonte de energia que funciona totalmente a base de gargalhadas de crianças. Nega relatos da existência de monstros por perto.</i>"</>,
   <>Notícia: "Malware em meme de gatinhos causa perda de dados."</>,
 ];
 

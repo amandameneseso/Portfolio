@@ -14,7 +14,7 @@ const Widget: React.FC<WidgetProps> = ({ title, children, className, onClick }) 
   return (
     <div 
       className={`widget-card ${className || ''}`} 
-      onClick={onClick} // 👈 aplica aqui
+      onClick={onClick}
       role={onClick ? 'button' : undefined} // acessibilidade opcional
       tabIndex={onClick ? 0 : undefined} // acessibilidade opcional
     >

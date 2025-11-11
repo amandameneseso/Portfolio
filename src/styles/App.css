@@ -8,8 +8,14 @@ body {
   overflow: hidden;
 }
 
+/* body.theme-light {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0)), url(../images/backgroundlacy.gif);
+    background-attachment: fixed;
+} */
+
 body.theme-light {
-  --color-app-background: linear-gradient(to right, #d3e9f0, #90b6c4);
+  /* --color-app-background: linear-gradient(to right, #d3e9f059, #90b6c4); */
+  --color-app-background: linear-gradient(rgba(235, 244, 252, 0.541), rgba(235, 244, 252, 0.541)), url(../assets/images/lacebgazul3.png);
 
   --widget-bg: rgba(255, 255, 255, 0.7);
   --widget-shadow: rgba(0, 0, 0, 0.1);
@@ -20,9 +26,10 @@ body.theme-light {
 }
 
 body.theme-dark {
-  --color-app-background: linear-gradient(to right, #3f4c6b, #606c88);
+  --color-app-background: linear-gradient(rgba(34, 68, 99, 0.274), rgba(31, 79, 121, 0.397)), url(../assets/images/grid.jpg);
+  /* --color-app-background: linear-gradient(to right, #3f4c6b, #606c88); */
 
-  --widget-bg: rgba(118, 127, 151, 0.658);
+  --widget-bg: rgba(46, 54, 74, 0.658);
   --widget-shadow: rgba(0, 0, 0, 0.3);
   --widget-text-primary: #ffffff;
   --widget-text-secondary: #f7f7f7;

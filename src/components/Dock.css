@@ -10,12 +10,16 @@
 
 .dock {
   display: flex;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 20px;
   padding: 8px 15px;
   gap: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   margin-bottom: 20px;
+}
+
+body.theme-dark .dock {
+  background: rgba(46, 54, 74, 0.6);
 }
 
 .dock-item {

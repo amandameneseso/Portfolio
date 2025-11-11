@@ -1,10 +1,9 @@
 /* src/components/Notification.css */
 .notification {
   position: fixed;
-  /* Topo e centralizado */
-  top: 20px; /* Distância do topo */
-  left: 50%; /* Começa no meio */
-  transform: translateX(-50%); /* Ajusta para centralizar exatamente */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   
   background-color: #333;
   color: #fff;
@@ -14,16 +13,24 @@
   opacity: 0.95;
   font-size: 14px;
   z-index: 1000;
-  animation: slideDown 0.5s ease-out forwards; /* Adicionado 'forwards' para manter o estado final */
+  animation: slideDown 0.5s ease-out forwards, fadeOut 1s ease-in forwards;
+  animation-delay: 0s, 4s; /* Aparece imediatamente, desaparece após 4s */
 }
 
+/* Animação de entrada */
 @keyframes slideDown {
   from { 
-    transform: translate(-50%, -100%); /* Começa acima do topo, centralizado horizontalmente */
+    transform: translate(-50%, -100%);
     opacity: 0; 
   }
   to { 
-    transform: translate(-50%, 0); /* Termina na posição normal, centralizado horizontalmente */
+    transform: translate(-50%, 0);
     opacity: 0.95; 
   }
+}
+
+/* Animação de saída */
+@keyframes fadeOut {
+  from { opacity: 0.95; }
+  to { opacity: 0; }
 }
